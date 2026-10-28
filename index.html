@@ -637,6 +637,9 @@
                         <textarea class="contact-form__textarea" id="contactMessage" placeholder="Write your message..."
                             rows="5" required></textarea>
                     </div>
+                    <!-- Honeypot: hidden from people, bots fill it and get ignored -->
+                    <input type="text" id="contactWebsite" name="website" tabindex="-1" autocomplete="off"
+                        aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" />
 
                     <div class="contact-msg contact-msg--success" id="contactSuccess" data-i18n="contact_success">
                         Message sent successfully! I'll get back to you soon.</div>
@@ -687,7 +690,7 @@
     <script src="js/scripts.js" defer></script>
     <script src="js/menu3d.js" defer></script>
     <script src="js/starfield.js" defer></script>
-    <script src="js/firebase-contact.js" defer></script>
+    <script src="js/contact.js" defer></script>
     <script src="js/chatbot.js" defer></script>
 
 </body>
