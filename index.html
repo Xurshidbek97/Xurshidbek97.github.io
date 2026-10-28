@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="Xurshidbek Tuychiyev — AI Automation Developer, Telegram Bot Builder & Programming Teacher. I build AI-powered bots and automation systems that save time and increase efficiency." />
+    <meta name="author" content="Xurshidbek Tuychiyev" />
+    <meta name="keywords" content="Backend Developer, Backend Developer, Telegram Bot, Automation, Python, Portfolio, Xurshidbek Tuychiyev" />
+    <meta property="og:title" content="Xurshidbek Tuychiyev | AI Automation Developer" />
+    <meta property="og:description"
+        content="I build AI-powered Telegram bots and automation systems that save time and increase efficiency." />
+    <meta property="og:type" content="website" />
+    <title>Xurshidbek Tuychiyev | AI Automation Developer</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" />
+
+    <!-- Font Awesome (CSS webfont — much lighter than the JS/SVG build) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Styles -->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- ========== STARFIELD CANVAS ========== -->
+    <canvas id="starfield"></canvas>
+
+    <!-- ========== SIDEBAR / HEADER ========== -->
+    <nav class="sidebar" id="sideNav">
+        <a class="sidebar__brand" href="#about">
+            <img decoding="async" class="sidebar__avatar" src="assets/img/mypic_oq.webp" alt="Xurshidbek Tuychiyev" />
+            <span class="sidebar__name">Xurshidbek <span>T.</span></span>
+        </a>
+
+        <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+            <span class="hamburger__line"></span>
+            <span class="hamburger__line"></span>
+            <span class="hamburger__line"></span>
+        </button>
+
+        <!-- Nav Panel -->
+        <div class="nav-panel" id="navPanel">
+            <div class="nav-panel__avatar-wrap">
+                <img loading="lazy" decoding="async" class="nav-panel__avatar" src="assets/img/mypic_oq.webp" alt="Xurshidbek Tuychiyev" />
+                <div class="nav-panel__fullname">Xurshidbek <span>Tuychiyev</span></div>
+            </div>
+
+            <ul class="nav-links">
+                <li><a class="nav-links__item active" href="#about">
+                        <span class="nav-links__icon">👤</span> <span data-i18n="nav_about">About Me</span></a></li>
+                <li><a class="nav-links__item" href="#education">
+                        <span class="nav-links__icon">🎓</span> <span data-i18n="nav_education">Education</span></a>
+                </li>
+                <li><a class="nav-links__item" href="#experience">
+                        <span class="nav-links__icon">💼</span> <span data-i18n="nav_experience">Experience</span></a>
+                </li>
+                <li><a class="nav-links__item" href="#science">
+                        <span class="nav-links__icon">🔬</span> <span data-i18n="nav_science">Scientific Activity</span></a>
+                </li>
+                <li><a class="nav-links__item" href="#projects">
+                        <span class="nav-links__icon">🚀</span> <span data-i18n="nav_projects">Projects</span></a>
+                </li>
+                <li><a class="nav-links__item" href="#skills">
+                        <span class="nav-links__icon">⚡</span> <span data-i18n="nav_skills">Skills</span></a></li>
+                <li><a class="nav-links__item" href="#interests">
+                        <span class="nav-links__icon">🎯</span> <span data-i18n="nav_interests">Interests</span></a>
+                </li>
+                <li><a class="nav-links__item" href="#contact">
+                        <span class="nav-links__icon">📩</span> <span data-i18n="nav_contact">Contact</span></a></li>
+            </ul>
+
+            <!-- Language Switcher — 4 languages -->
+            <div class="lang-switch" id="langSwitch">
+                <button class="lang-switch__btn" data-lang="uz">UZ</button>
+                <button class="lang-switch__btn" data-lang="ru">RU</button>
+                <button class="lang-switch__btn active" data-lang="en">EN</button>
+                <button class="lang-switch__btn" data-lang="ar">AR</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main class="main">
+        <div class="main__inner">
+
+            <!-- ===== ABOUT / HERO ===== -->
+            <section class="hero" id="about">
+                <!-- Photo Carousel -->
+                <div class="hero__carousel-wrap">
+                    <div>
+                        <div class="hero__carousel" id="heroCarousel">
+                            <img decoding="async" class="hero__carousel-img active" src="assets/img/documentarypic.webp"
+                                alt="Xurshidbek  - Documentary" />
+                            <img loading="lazy" decoding="async" class="hero__carousel-img" src="assets/img/streetpic.webp" alt="Xurshidbek  - Street" />
+                            <img loading="lazy" decoding="async" class="hero__carousel-img" src="assets/img/sportpic.webp" alt="Xurshidbek  - Sport" />
+                        </div>
+                        <div class="hero__carousel-dots" id="carouselDots">
+                            <button class="hero__carousel-dot active" data-slide="0" aria-label="Photo 1"></button>
+                            <button class="hero__carousel-dot" data-slide="1" aria-label="Photo 2"></button>
+                            <button class="hero__carousel-dot" data-slide="2" aria-label="Photo 3"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="hero__name">Xurshidbek  <span>Tuychiyev </span></h1>
+
+                <p class="hero__tagline" data-i18n="hero_tagline">I build AI-powered Telegram bots and automation
+                    systems that save time and increase efficiency.</p>
+
+                <div class="hero__subtitle">
+                    <span data-i18n="hero_subtitle">Tashkent · Uzbekistan</span> &nbsp;|&nbsp;
+                    <a href="tel:+998933733200">☎️ +99893 373 32 00</a> &nbsp;·&nbsp;
+                    📩 <a href="mailto:xurshidbek2797@gmail.com">xurshidbek2797@gmail.com</a>
+                </div>
+
+                <p class="hero__bio" data-i18n="hero_bio1">I have 5 years of experience and achievements in programming and 4 years in teaching. I have deep knowledge of C++ and Python and have completed professional development in artificial intelligence. As a backend developer at "Texnomart" LLC and ITeachSoft, I took part in large-scale software projects. At the International Islamic Academy of Uzbekistan and Renaissance Education University I led the "AI Club", teaching students artificial intelligence and data analytics beyond regular classes. I also founded an open, free online learning platform.</p>
+
+
+                <div class="social">
+                    <a class="social__link" href="https://www.linkedin.com/in/Xurshidbek2797/" target="_blank"
+                        aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i></a>
+                    <a class="social__link" href="https://github.com/Xurshidbek97" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i></a>
+                    <a class="social__link" href="https://t.me/Xurshidbek_Tuychiyev" target="_blank" aria-label="Telegram">
+                        <i class="fab fa-telegram"></i></a>
+                </div>
+            </section>
+
+            <!-- ===== EDUCATION ===== -->
+            <section class="section" id="education">
+                <h2 class="section__title" data-i18n="sec_education">Education</h2>
+
+                <div class="timeline">
+                    <div class="card fade-in">
+                        <div class="card__header">
+                            <img loading="lazy" decoding="async" class="card__logo" src="assets/img/iiau-logo.webp" alt="IIAU Logo" />
+                            <div class="card__header-text">
+                                <div class="card__org" data-i18n="edu1_org">International Islamic Academy of Uzbekistan
+                                </div>
+                                <div class="card__role" data-i18n="edu1_role">Master's / Information Security Management
+                                </div>
+                                <span class="card__date" data-i18n="edu1_date">📅 September 2021 – July 2023</span>
+                            </div>
+                        </div>
+                        <div class="card__body">
+                            <p data-i18n="edu1_desc1">Master's thesis: "Development of an online bookstore platform".</p>
+                        </div>
+                    </div>
+
+                    <div class="card fade-in">
+                        <div class="card__header">
+                            <img loading="lazy" decoding="async" class="card__logo" src="assets/img/tuit-logo.webp" alt="TUIT Logo" />
+                            <div class="card__header-text">
+                                <div class="card__org" data-i18n="edu2_org">Fergana Branch of Tashkent University of Information Technologies</div>
+                                <div class="card__role" data-i18n="edu2_role">Bachelor's / Software Engineering</div>
+                                <span class="card__date" data-i18n="edu2_date">📅 2017 – 2021</span>
+                            </div>
+                        </div>
+                        <div class="card__body">
+                            <p data-i18n="edu2_desc1">Studied mathematical programming olympiads, software design, and
+                                development.</p>
+                            <p data-i18n="edu2_desc2">Programming (C/C++, Python), Algorithms and Data Structures,
+                                Networks and Operating Systems.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== EXPERIENCE ===== -->
+            <section class="section" id="experience">
+                <h2 class="section__title" data-i18n="sec_experience">Experience</h2>
+
+                <div class="timeline">
+                    <!-- UWED -->
+                    <div class="card fade-in">
+                        <div class="card__header">
+                            <img loading="lazy" decoding="async" class="card__logo" src="assets/img/uwed-logo.webp" alt="UWED Logo" width="48" height="48" />
+                            <div class="card__header-text">
+                                <div class="card__org" data-i18n="exp0_org">University of World Economy and Diplomacy</div>
+                                <div class="card__role" data-i18n="exp0_role">Lecturer</div>
+                                <span class="card__date" data-i18n="exp0_date">📅 2026 – Present</span>
+                            </div>
+                        </div>
+                        <div class="card__body">
+                            <p data-i18n="exp0_desc1">Teaching modern information technologies and programming to
+                                students.</p>
+                            <p data-i18n="exp0_desc2">Conducting research in artificial intelligence and digital
+                                technologies.</p>
+                            <p data-i18n="exp0_desc3">Mentoring students in AI and data analytics projects.</p>
+                        </div>
+                    </div>
+
+                    <!-- Renessans -->
+                    <div class="card fade-in">
+                        <div class="card__header">
+                            <img loading="lazy" decoding="async" class="card__logo" src="assets/img/renessans-logo.webp" alt="Renessans Logo" />
+                            <div class="card__header-text">
+                                <div class="card__org" data-i18n="exp1_org">"Renaissance Education University" LLC</div>
+                                <div class="card__role" data-i18n="exp1_role">Senior Lecturer, Department of Information Technologies</div>
+                                <span class="card__date" data-i18n="exp1_date">📅 September 2023 – July 2025</span>
+                            </div>
+                        </div>
+                        <div class="card__body">
+                            <p data-i18n="exp1_desc1">Organizing laboratory and project work based on Python, C++ and
+                                other programming languages, developing students' algorithmic thinking and practical
+                                skills.</p>
+                            <p data-i18n="exp1_desc2">Preparing teaching materials, tests, slides, and lesson plans;
+                                training talented students for olympiads, hackathons, startups, and tech competitions.
+                            </p>
+                            <p data-i18n="exp1_desc3">Developing modern curricula, participating in scientific research,
+                                writing articles and abstracts.</p>
+                        </div>
+                    </div>
+
+                    <!-- IIAU — Teacher -->
+                    <div class="card fade-in">
+                        <div class="card__header">
+                            <img loading="lazy" decoding="async" class="card__logo" src="assets/img/iiau-logo.webp" alt="IIAU Logo" />
+                            <div class="card__header-text">
+                                <div class="card__org" data-i18n="exp2_org">International Islamic Academy of Uzbekistan</div>
+                                <div class="card__role" data-i18n="exp2_role">Teacher</div>
+                                <span class="card__date" data-i18n="exp2_date">📅 2023 – 2026</span>
+                            </div>
+                        </div>
+                        <div class="card__body">
+                            <p data-i18n="exp2_desc1">Teaching programming and modern information technologies to
+                                students.</p>
+                            <p data-i18n="exp2_desc2">Preparing lectures, lab sessions and teaching materials;
+                                developing students' practical skills.</p>
+                            <p data-i18n="exp2_desc3">Mentoring students in research, IT projects, competitions and
+                                hackathons.</p>
+                        </div>
+                    </div>
+
+                    <!-- IIAU -->
+                    <div class="card fade-in">
+                        <div class="card__header">
+                            <img loading="lazy" decoding="async" class="card__logo" src="assets/img/iiau-logo.webp" alt="IIAU Logo" />
+                            <div class="card__header-text">
+                                <div class="card__org" data-i18n="exp4_org">International Islamic Academy of Uzbekistan
+                                </div>
+                                <div class="card__role" data-i18n="exp4_role">Laboratory Assistant</div>
+                                <span class="card__date" data-i18n="exp4_date">📅 2022 – 2023</span>
+                            </div>
+                        </div>
+                        <div class="card__body">
+                            <p data-i18n="exp4_desc1">Ensuring the operation of computers and technical equipment used
+                                in the educational process.</p>
+                            <p data-i18n="exp4_desc2">Technical and organizational assistance in department activities,
+                                document preparation.</p>
+                        </div>
+                    </div>
+
+                    <!-- Texnomart -->
+                    <div class="card fade-in">
+                        <div class="card__header">
+                            <img loading="lazy" decoding="async" class="card__logo" src="assets/img/texnomart-logo.webp" alt="Texnomart Logo" />
+                            <div class="card__header-text">
+                                <div class="card__org" data-i18n="exp5_org">"Texnomart" LLC</div>
+                                <div class="card__role" data-i18n="exp5_role">PHP Backend Developer</div>
+                                <span class="card__date" data-i18n="exp5_date">📅 2021 – 2022</span>
+                            </div>
+                        </div>
+                        <div class="card__body">
+                            <p data-i18n="exp5_desc1">Developed REST API endpoints in PHP.</p>
+                            <p data-i18n="exp5_desc2">Optimized MySQL queries and added database indexes.</p>
+                            <p data-i18n="exp5_desc3">Documented the API with Swagger.</p>
+                            <p data-i18n="exp5_desc4">Integrated Telegram for daily report delivery to group chats.</p>
+                            <p data-i18n="exp5_desc5">Wrote periodic background tasks with cron.</p>
+                            <p data-i18n="exp5_desc6">Deployed the project with Nginx and PHP-FPM.</p>
+                        </div>
+                    </div>
+
+                    <!-- ITeachSoft -->
+                    <div class="card fade-in">
+                        <div class="card__header">
+                            <img loading="lazy" decoding="async" class="card__logo" src="assets/img/iteachsoft-logo.svg" alt="ITeachSoft Logo" />
+                            <div class="card__header-text">
+                                <div class="card__org" data-i18n="exp6_org">ITeachSoft</div>
+                                <div class="card__role" data-i18n="exp6_role">Backend Developer</div>
+                                <span class="card__date" data-i18n="exp6_date">📅 2020 – 2021</span>
+                            </div>
+                        </div>
+                        <div class="card__body">
+                            <p data-i18n="exp6_desc1">Developed and maintained server-side logic and REST APIs with
+                                Python/Django.</p>
+                            <p data-i18n="exp6_desc2">Designed database schemas; wrote and optimized PostgreSQL
+                                queries.</p>
+                            <p data-i18n="exp6_desc3">Collaborated in a team via Git (branches, code review, pull
+                                requests).</p>
+                            <p data-i18n="exp6_desc4">Fixed bugs, wrote tests and set up the local development
+                                environment.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== SCIENTIFIC ACTIVITY ===== -->
+            <section class="section" id="science">
+                <h2 class="section__title" data-i18n="sec_science">Scientific Activity (PhD)</h2>
+
+                <div class="sci-badges">
+                    <a class="sci-badge sci-badge--orcid fade-in" href="https://orcid.org/0009-0002-7970-7481"
+                        target="_blank" rel="noopener">
+                        <span class="sci-badge__icon sci-badge__icon--orcid">iD</span>
+                        ORCID: 0009-0002-7970-7481
+                    </a>
+                    <a class="sci-badge sci-badge--scholar fade-in"
+                        href="https://scholar.google.com/citations?user=hj0ZtBQAAAAJ&amp;hl=ru" target="_blank"
+                        rel="noopener">
+                        <span class="sci-badge__icon sci-badge__icon--scholar">
+                            <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
+                                <path fill="currentColor" d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zm-6.8 9.2V16c0 1.7 3 3.5 6.8 3.5s6.8-1.8 6.8-3.5v-3.8L12 16l-6.8-3.8z"/>
+                            </svg>
+                        </span>
+                        Google Scholar
+                        <span class="sci-badge__arrow">↗</span>
+                    </a>
+                    <span class="sci-badge sci-badge--dgu fade-in">
+                        <span class="sci-badge__icon sci-badge__icon--dgu">📜</span>
+                        <span data-i18n="sci_dgu">DGU 34208 — Software Copyright</span>
+                    </span>
+                </div>
+
+                <div class="pub-grid">
+                    <div class="pub-col">
+                        <h3 class="pub-col__title">🌍 <span data-i18n="sci_intl">International</span></h3>
+                        <article class="pub-card pub-card--scopus fade-in">
+                            <div class="pub-card__badges">
+                                <span class="pub-badge pub-badge--scopus">Scopus</span>
+                                <span class="pub-badge">ICAIIT 2026</span>
+                            </div>
+                            <h4 class="pub-card__title">Intelligent Web Performance Monitoring Using Machine Learning</h4>
+                            <p class="pub-card__meta">Rakhmanov K., Tuychiev Kh., Kurganbaev J., Muhammadiev A. —
+                                Proceedings of the International Conference on Applied Innovations in IT (ICAIIT),
+                                Vol. 14, Issue 4, July 2026.</p>
+                            <a class="pub-doi" href="https://doi.org/10.25673/125460" target="_blank" rel="noopener">
+                                <span class="pub-doi__label">DOI</span>
+                                <span class="pub-doi__value">10.25673/125460</span>
+                            </a>
+                            <a class="pub-card__link" href="https://icaiit.org/paper.php?paper=14th_ICAIIT_4/7_19"
+                                target="_blank" rel="noopener" data-i18n="sci_read">Read Article ↗</a>
+                        </article>
+                        <div class="pub-more" id="pubMoreIntl" inert>
+                            <div class="pub-more__inner">
+                                <article class="pub-card">
+                                    <h4 class="pub-card__title">Application of Natural Language Processing (NLP) in Information
+                                        Security</h4>
+                                    <p class="pub-card__meta">Rakhmanov K.S., Tuychiyev X.M. — Web of Technology: Journal of
+                                        Multidimensional Research, 2024.</p>
+                                </article>
+                                <article class="pub-card">
+                                    <h4 class="pub-card__title">Analyzing Web Sites Using Artificial Intelligence</h4>
+                                    <p class="pub-card__meta">Tuychiyev X.M. — Proceedings of International Educators
+                                        Conference, Vol. 3, Issue 11, 2024 — pp. 119–124.</p>
+                                </article>
+                            </div>
+                        </div>
+                        <button class="pub-toggle" type="button" aria-expanded="false" aria-controls="pubMoreIntl"
+                            data-count="2">
+                            <span class="pub-toggle__more" data-i18n-count="sci_more">2 more publications</span>
+                            <span class="pub-toggle__less" data-i18n="sci_less">Show less</span>
+                            <span class="pub-toggle__chev" aria-hidden="true">▾</span>
+                        </button>
+                    </div>
+
+                    <div class="pub-col">
+                        <h3 class="pub-col__title">🏛️ <span data-i18n="sci_rep">Republic</span></h3>
+                        <article class="pub-card fade-in">
+                            <h4 class="pub-card__title">Intellektual tizimlar yordamida veb-saytlarni tahlil qilishda
+                                algoritmlarning ishonchliligini taʼminlash: semantik tahlil va kontent
+                                klasterizatsiyasi</h4>
+                            <p class="pub-card__meta">Raxmanov Q.S., Tuychiyev X.M. — "Raqamli Transformatsiya va
+                                Sun'iy Intellekt" ilmiy jurnali, Vol. 3, Issue 2, April 2025.</p>
+                        </article>
+                    </div>
+
+                    <div class="pub-col">
+                        <h3 class="pub-col__title">🎓 <span data-i18n="sci_oak">OAK Journal</span></h3>
+                        <article class="pub-card fade-in">
+                            <h4 class="pub-card__title">Web saytlarda ma'lumotlar xavfsizligini ta'minlovchi
+                                dasturlar tahlili</h4>
+                            <p class="pub-card__meta">Tuychiyev X.M. — "Research and Education" ilmiy jurnali,
+                                Vol. 3, Issue 1, 2024.</p>
+                            <a class="pub-doi" href="https://doi.org/10.5281/zenodo.10576899" target="_blank"
+                                rel="noopener">
+                                <span class="pub-doi__label">DOI</span>
+                                <span class="pub-doi__value">10.5281/zenodo.10576899</span>
+                            </a>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Textbooks -->
+                <h3 class="pub-col__title book-heading">📘 <span data-i18n="sci_books">Textbooks</span></h3>
+                <article class="book-card fade-in">
+                    <figure class="book">
+                        <div class="book__3d">
+                            <img class="book__cover" src="assets/img/ml-book-cover.webp" loading="lazy" decoding="async"
+                                width="200" height="283" alt="Machine Learning — X. I. Axmedova, X. M. To'ychiyev" />
+                            <span class="book__pages" aria-hidden="true"></span>
+                        </div>
+                        <figcaption class="book__audience">🎓 <span data-i18n="book_audience">For all higher education
+                                students</span></figcaption>
+                    </figure>
+
+                    <div class="book-card__info">
+                        <span class="pub-badge book-card__type" data-i18n="book_type">Textbook</span>
+                        <h4 class="book-card__title" data-i18n="book_title">Machine Learning — Textbook</h4>
+                        <p class="book-card__authors">X. I. Axmedova, X. M. To'ychiyev</p>
+                        <dl class="book-card__facts">
+                            <div>
+                                <dt data-i18n="book_published">Published</dt>
+                                <dd data-i18n="book_place">Tashkent, 2026</dd>
+                            </div>
+                            <div>
+                                <dt>ISBN</dt>
+                                <dd class="book-card__isbn">978-9910-340-06-2</dd>
+                            </div>
+                        </dl>
+                    </div>
+
+                    <a class="book-qr" href="https://oldmy.gov.uz/ru/repo/get-document/4952-216a-b0b4-6d56-ce43-1343-7970"
+                        target="_blank" rel="noopener">
+                        <img class="book-qr__img" src="assets/img/ml-book-qr.svg" loading="lazy" width="120"
+                            height="120" alt="QR code — publication permit" />
+                        <span class="book-qr__label" data-i18n="book_qr">Publication permit</span>
+                        <span class="book-qr__hint" data-i18n="book_qr_hint">Scan or tap ↗</span>
+                    </a>
+                </article>
+
+                <div class="pub-pdf-wrap">
+                    <a class="pub-pdf-btn" href="assets/file/maqolalar.pdf" target="_blank" rel="noopener">
+                        <span class="pub-pdf-btn__face">
+                            <span class="pub-pdf-btn__icon">📄</span>
+                            <span data-i18n="sci_pdf">List of publications (PDF)</span>
+                            <span class="pub-pdf-btn__arrow">→</span>
+                        </span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- ===== PROJECTS ===== -->
+            <section class="section" id="projects">
+                <h2 class="section__title" data-i18n="sec_projects">Projects</h2>
+                <!-- Cards are rendered by js/projects.js -->
+                <div class="projects-grid" id="projectsGrid"></div>
+            </section>
+
+            <!-- Hidden for now — remove the comment markers to show Awards again
+            ===== AWARDS =====
+            <section class="section" id="awards">
+                <h2 class="section__title" data-i18n="sec_awards">Awards & Certifications</h2>
+
+                <div class="awards-grid">
+                    <div class="award-item fade-in">
+                        <div class="award-item__img-wrap">
+                            <img loading="lazy" decoding="async" class="award-item__img" src="assets/img/year_teacher.jpg" alt="Best Teacher" />
+                        </div>
+                        <div class="award-item__body">
+                            <div class="award-item__title" data-i18n="award1_title">"TEACHER OF THE YEAR"</div>
+                            <p class="award-item__desc" data-i18n="award1_desc">Winner of the best teacher nomination
+                                for the 2024-2025 academic year.</p>
+                        </div>
+                    </div>
+
+                    <div class="award-item fade-in">
+                        <div class="award-item__img-wrap">
+                            <img loading="lazy" decoding="async" class="award-item__img" src="assets/img/tashakkurnoma.png" alt="Tashakkurnoma" />
+                        </div>
+                        <div class="award-item__body">
+                            <div class="award-item__title" data-i18n="award2_title">LETTER OF APPRECIATION</div>
+                            <p class="award-item__desc" data-i18n="award2_desc">Awarded by administration for active
+                                participation in educational processes and contribution to university ranking in
+                                2023-2024.</p>
+                        </div>
+                    </div>
+
+                    <div class="award-item fade-in">
+                        <div class="award-item__img-wrap">
+                            <img loading="lazy" decoding="async" class="award-item__img" src="assets/img/GDSCLeads_certificate.jpeg" alt="GDSC Lead" />
+                        </div>
+                        <div class="award-item__body">
+                            <div class="award-item__title" data-i18n="award3_title">GDSC Lead Certification</div>
+                            <p class="award-item__desc" data-i18n="award3_desc">Google Developer Student Club Lead at
+                                IIAU 2022-2023</p>
+                        </div>
+                    </div>
+
+                    <div class="award-item fade-in">
+                        <div class="award-item__img-wrap">
+                            <img loading="lazy" decoding="async" class="award-item__img" src="assets/img/coursera_certification.png" alt="Coursera" />
+                        </div>
+                        <div class="award-item__body">
+                            <div class="award-item__title" data-i18n="award4_title">Tableau Public for Project
+                                Management</div>
+                            <p class="award-item__desc" data-i18n="award4_desc">Certificate for completing Coursera
+                                online course on Data Analytics and Project Management.</p>
+                        </div>
+                    </div>
+
+                    <div class="award-item fade-in">
+                        <div class="award-item__img-wrap">
+                            <img loading="lazy" decoding="async" class="award-item__img" src="assets/img/hackerrank_sertificate_picture.png"
+                                alt="HackerRank" />
+                        </div>
+                        <div class="award-item__body">
+                            <div class="award-item__title" data-i18n="award5_title">Python Certification</div>
+                            <p class="award-item__desc" data-i18n="award5_desc">Certified Python level through
+                                HackerRank platform.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            -->
+
+            <!-- ===== SKILLS ===== -->
+            <section class="section" id="skills">
+                <h2 class="section__title" data-i18n="sec_skills">Skills</h2>
+
+                <div class="skills-group">
+                    <h3 class="skills-group__title" data-i18n="skills_soft_title">🧠 Soft Skills</h3>
+                    <div class="soft-skill-list">
+                        <div class="soft-skill-item fade-in">
+                            <span class="soft-skill-item__icon">✓</span>
+                            <span data-i18n="soft1">Mentorship, coaching, and team management skills</span>
+                        </div>
+                        <div class="soft-skill-item fade-in">
+                            <span class="soft-skill-item__icon">✓</span>
+                            <span data-i18n="soft2">Problem solving and critical thinking</span>
+                        </div>
+                        <div class="soft-skill-item fade-in">
+                            <span class="soft-skill-item__icon">✓</span>
+                            <span data-i18n="soft3">Effective communication and public speaking</span>
+                        </div>
+                        <div class="soft-skill-item fade-in">
+                            <span class="soft-skill-item__icon">✓</span>
+                            <span data-i18n="soft4">Event organization and community building experience</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-group">
+                    <h3 class="skills-group__title" data-i18n="skills_hard_title">💻 Hard Skills</h3>
+                    <div class="skills-list">
+                        <span class="skill-badge fade-in"><i class="fab fa-python"></i> Python</span>
+                        <span class="skill-badge fade-in">📊 Data Analytics</span>
+                        <span class="skill-badge fade-in">📈 Excel</span>
+                        <span class="skill-badge fade-in">🗃️ SQL</span>
+                        <span class="skill-badge fade-in">📉 Power BI</span>
+                        <span class="skill-badge fade-in"><i class="fab fa-html5"></i> HTML/CSS</span>
+                        <span class="skill-badge fade-in">🅱️ Bootstrap</span>
+                        <span class="skill-badge fade-in"><i class="fab fa-js"></i> JavaScript</span>
+                        <span class="skill-badge fade-in">🐍 Django REST</span>
+                        <span class="skill-badge fade-in">🤖 Telegram Bot</span>
+                        <span class="skill-badge fade-in">🐘 PostgreSQL</span>
+                        <span class="skill-badge fade-in"><i class="fab fa-git-alt"></i> Git</span>
+                        <span class="skill-badge fade-in"><i class="fab fa-docker"></i> Docker</span>
+                        <span class="skill-badge fade-in"><i class="fab fa-linux"></i> Linux</span>
+                        <span class="skill-badge fade-in"><i class="fab fa-aws"></i> AWS</span>
+                    </div>
+                </div>
+
+                <div class="dev-icons">
+                    <span class="dev-icons__item"><i class="fab fa-css3-alt"></i></span>
+                    <span class="dev-icons__item"><i class="fab fa-js"></i></span>
+                    <span class="dev-icons__item"><i class="fab fa-python"></i></span>
+                    <span class="dev-icons__item"><i class="fab fa-github"></i></span>
+                    <span class="dev-icons__item"><i class="fab fa-docker"></i></span>
+                    <span class="dev-icons__item"><i class="fab fa-aws"></i></span>
+                    <span class="dev-icons__item"><i class="fab fa-linux"></i></span>
+                </div>
+            </section>
+
+            <!-- ===== INTERESTS ===== -->
+            <section class="section" id="interests">
+                <h2 class="section__title" data-i18n="sec_interests">Interests / Competencies</h2>
+
+                <div class="interests-group">
+                    <h3 class="interests-group__title" data-i18n="int_skills_title">Competencies</h3>
+                    <div class="interests-list">
+                        <p data-i18n="int_skill1">Teaching programming and AI fundamentals in an easy and understandable
+                            way.</p>
+                        <p data-i18n="int_skill2">Experience in C++, Python, algorithms, and AI projects.</p>
+                        <p data-i18n="int_skill3">Working with backend and frontend in web development.</p>
+                        <p data-i18n="int_skill4">Working with databases: writing efficient SQL, PostgreSQL queries.</p>
+                        <p data-i18n="int_skill5">Professional use of Google ecosystem tools: Google Sheets, Google
+                            Colab, Firebase.</p>
+                    </div>
+                </div>
+
+                <div class="interests-group">
+                    <h3 class="interests-group__title" data-i18n="int_lang_title">Languages</h3>
+                    <div class="interests-list">
+                        <p data-i18n="int_lang1">English: B2 (upper-intermediate), Russian: good level.</p>
+                    </div>
+                </div>
+
+                <div class="interests-group">
+                    <h3 class="interests-group__title" data-i18n="int_hobby_title">Hobbies</h3>
+                    <div class="interests-list">
+                        <p data-i18n="int_hobby1">AI projects, chess, reading books, and problem solving.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== CONTACT ===== -->
+            <section class="section contact-section" id="contact">
+                <h2 class="section__title" data-i18n="sec_contact">Contact Me</h2>
+
+                <form class="contact-form" id="contactForm" novalidate>
+                    <div class="contact-form__group">
+                        <label class="contact-form__label" for="contactName" data-i18n="contact_name_label">Your
+                            Name</label>
+                        <input class="contact-form__input" type="text" id="contactName" placeholder="John Doe"
+                            required />
+                    </div>
+                    <div class="contact-form__group">
+                        <label class="contact-form__label" for="contactEmail" data-i18n="contact_email_label">Your
+                            Email</label>
+                        <input class="contact-form__input" type="email" id="contactEmail" placeholder="you@example.com"
+                            required />
+                    </div>
+                    <div class="contact-form__group">
+                        <label class="contact-form__label" for="contactMessage"
+                            data-i18n="contact_msg_label">Message</label>
+                        <textarea class="contact-form__textarea" id="contactMessage" placeholder="Write your message..."
+                            rows="5" required></textarea>
+                    </div>
+
+                    <div class="contact-msg contact-msg--success" id="contactSuccess" data-i18n="contact_success">
+                        Message sent successfully! I'll get back to you soon.</div>
+                    <div class="contact-msg contact-msg--error" id="contactError"></div>
+
+                    <button class="contact-form__submit" type="submit" id="contactSubmitBtn">
+                        <span data-i18n="contact_send">Send Message</span>
+                    </button>
+                </form>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- AI Chatbot Widget -->
+    <button class="chatbot-toggle" id="chatbotToggle" aria-label="Chat with AI">
+        <span class="chat-icon">🤖</span>
+        <span class="close-icon">✕</span>
+    </button>
+
+    <div class="chatbot-window" id="chatbotWindow">
+        <div class="chatbot-header">
+            <div class="chatbot-header__avatar">🤖</div>
+            <div class="chatbot-header__info">
+                <div class="chatbot-header__name" data-i18n="chat_name">Xurshidbek 's AI Assistant</div>
+                <div class="chatbot-header__status" data-i18n="chat_status">Online</div>
+            </div>
+        </div>
+        <div class="chatbot-messages" id="chatMessages"></div>
+        <div class="chat-suggestions" id="chatSuggestions"></div>
+        <div class="chatbot-input-wrap">
+            <input class="chatbot-input" id="chatInput" type="text" placeholder="Ask me anything..."
+                autocomplete="off" />
+            <button class="chatbot-send" id="chatSend" aria-label="Send">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/translations.js" defer></script>
+    <script src="js/projects.js" defer></script>
+    <script src="js/scripts.js" defer></script>
+    <script src="js/menu3d.js" defer></script>
+    <script src="js/starfield.js" defer></script>
+    <script src="js/firebase-contact.js" defer></script>
+    <script src="js/chatbot.js" defer></script>
+
+</body>
+
+</html>
