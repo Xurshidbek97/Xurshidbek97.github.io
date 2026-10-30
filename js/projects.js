@@ -3,7 +3,7 @@
    Add a project by adding an object to PROJECTS:
    {
      title: "Project name",
-     icon: "🤖",
+     icon: "🤖",                // or logo: "assets/img/x.png" to show an image
      desc: { uz: "...", ru: "...", en: "...", ar: "..." },  // en is the fallback
      tags: ["Python", "Django"],
      url: "https://...",        // the whole card opens this link
@@ -76,21 +76,17 @@ const PROJECTS = [
         url: "https://r-tili.khurshidbek.workers.dev/"
     },
     {
-        title: {
-            uz: "So'rovnoma platformasi",
-            ru: "Платформа опросов",
-            en: "Survey Platform",
-            ar: "منصة الاستبيانات"
-        },
+        title: "FikrLab",
+        logo: "assets/img/fikrlab-logo.png",
         icon: "📝",
-        soon: true,
         desc: {
             uz: "Onlayn so'rovnomalar yaratish va natijalarni tahlil qilish platformasi.",
             ru: "Платформа для создания онлайн-опросов и анализа результатов.",
             en: "A platform for creating online surveys and analysing the results.",
             ar: "منصة لإنشاء الاستبيانات الإلكترونية وتحليل نتائجها."
         },
-        tags: ["Web"]
+        tags: ["Web", "Cloudflare Workers"],
+        url: "https://surveyhub.khurshidbek.workers.dev/"
     }
 ];
 
@@ -122,7 +118,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const body = `
                     <div class="project-card__glow"></div>
                     <div class="project-card__top">
-                        <span class="project-card__icon">${escapeHtml(p.icon || '🚀')}</span>
+                        <span class="project-card__icon">${p.logo
+                            ? `<img src="${escapeHtml(p.logo)}" alt="" width="36" height="36" loading="lazy">`
+                            : escapeHtml(p.icon || '🚀')}</span>
                         ${p.url ? `<span class="project-card__host">${escapeHtml(hostOf(p.url))}</span>` : ''}
                     </div>
                     <h3 class="project-card__title">${escapeHtml(pick(p.title))}</h3>
